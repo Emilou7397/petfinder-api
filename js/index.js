@@ -19,10 +19,10 @@ let fill = function(datavar, i) {
 	age = datavar.animals[i].age;
 	gender = datavar.animals[i].gender;
 	if (gender == "Female") {
-		genderIcon = "https://github.com/Emilou7397/petfinder-api/blob/master/female.png?raw=true";
+		genderIcon = "https://github.com/Emilou7397/petfinder-api/blob/master/img/female.png?raw=true";
 	}
 	else {
-		genderIcon = "https://github.com/Emilou7397/petfinder-api/blob/master/male.png?raw=true";
+		genderIcon = "https://github.com/Emilou7397/petfinder-api/blob/master/img/male.png?raw=true";
 	}
 	breeds = [datavar.animals[i].breeds.primary];
 	if (datavar.animals[i].breeds.secondary) {
@@ -33,7 +33,7 @@ let fill = function(datavar, i) {
 		photos.push(photo.medium);
 	})
 	
-	photos.push("https://github.com/Emilou7397/petfinder-api/blob/master/default-cat.png?raw=true");
+	photos.push("https://github.com/Emilou7397/petfinder-api/blob/master/img/default-cat.png?raw=true");
 		
 	let template = `
 								<div class="pet"><img src="${photos[0]}" class="petimg"></img>
