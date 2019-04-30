@@ -13,10 +13,11 @@ let doStuff = function(data) {
 };
 
 let fill = function(datavar, i) {
-	let name, age, gender, genderIcon, breeds;
+	let name, age, gender, genderIcon, breeds, url;
 	let photos = [];
 	name = datavar.animals[i].name;
 	age = datavar.animals[i].age;
+	url = datavar.animals[i].url;
 	gender = datavar.animals[i].gender;
 	if (gender == "Female") {
 		genderIcon = "https://github.com/Emilou7397/petfinder-api/blob/master/img/female.png?raw=true";
@@ -38,11 +39,11 @@ let fill = function(datavar, i) {
 	let template = `
 								<div class="pet"><img src="${photos[0]}" class="petimg"></img>
 								<h2>${name}</h2>
-								<p>${age}</p> <p>${gender}</p> <img src=${genderIcon} class="gender" /> <p>${breeds}</p></div>`;
-	
-	console.log(template);
+								<p>${age}</p> <p>${gender}</p> <img src=${genderIcon} class="gender" /> <p>${breeds}</p>
+								<div class="adopt-wrapper"><a href="${url}" target="_blank" class="adopt">Adopt Me!</a></div></div>`;
 		
 	$("#pet").append(template);
+	
 		
 	photos = [];
 }
@@ -55,13 +56,11 @@ $.getJSON( getStuff, doStuff);
 $(".next").click(function() {
 		document.querySelector("#pet").innerHTML = "";
 		i = (i + 1) % datavar.animals.length;
-	console.log(datavar);
 		fill(datavar, i);
 });
 
 $(".prev").click(function() {
 		document.querySelector("#pet").innerHTML = "";
 		i = (i + datavar.animals.length - 1) % datavar.animals.length;
-	console.log(datavar);
 		fill(datavar, i);
 });

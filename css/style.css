@@ -20,7 +20,7 @@ h1 {
 
 .pet {
 	margin: 20px;
-	padding: 20px;
+	padding: 20px 20px 30px 20px;
 	border-radius: 15px;
 	
 	background-color: #80b;
@@ -42,6 +42,12 @@ img.gender {
 	margin-left: 3px;
 }
 
+a {
+   pointer-events: auto !important;  
+   cursor: pointer !important;
+	 text-decoration: none;
+}
+
 a.prev > img, a.next > img {
 	height: 50px;
 }
@@ -49,6 +55,17 @@ a.prev > img, a.next > img {
 a.prev {
 	-webkit-transform: rotate(180deg);
 	        transform: rotate(180deg);
+}
+
+.adopt-wrapper {
+	text-align: center;
+}
+
+a.adopt {
+	background-color: #fff;
+	color: #80b;
+	padding: 10px 20px;
+	border-radius: 10px;
 }
 
 h2 {
@@ -62,4 +79,5 @@ p	{
 p:nth-of-type(3n) {
 	display: block;
 	margin-top: 3px;
+	margin-bottom: 30px;
 }
